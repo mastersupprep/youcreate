@@ -58,7 +58,7 @@ Question: ${question.question_statement}
 ${question.options ? `Options: ${question.options}` : ''}
 Answer: ${question.answer}
 ${question.solution ? `Solution: ${question.solution}` : ''}
-
+Keep one thing in mind that you just have to give words that the character will speak no extra label no visual description no timestamps no extra instruction just the spoken audio text strictly because whatever you will write the ai further will speak this and which will make no sense you just have to give an engaging audio script 
 Make the script conversational, engaging, and suitable for voice-over. Use simple language that sounds natural when spoken.`;
 
       const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${GEMINI_API_KEY}`, {
