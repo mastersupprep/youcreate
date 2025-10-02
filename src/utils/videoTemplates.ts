@@ -16,58 +16,58 @@ export interface VideoTemplate {
 export const VIDEO_TEMPLATES: VideoTemplate[] = [
   {
     id: 1,
-    name: 'Teal Gradient Professional',
+    name: 'Teal Gradient Engaging',
     backgroundType: 'gradient',
     primaryColor: '#0d9488',
-    secondaryColor: '#14b8a6',
-    fontFamily: 'Inter, sans-serif',
-    layoutType: 'modern',
-    animationStyle: 'smooth',
-    headerFontSize: '48px',
-    questionFontSize: '28px',
-    optionFontSize: '24px',
-    captionStyle: 'none'
-  },
-  {
-    id: 2,
-    name: 'Warm Gradient Modern',
-    backgroundType: 'gradient',
-    primaryColor: '#0d9488',
-    secondaryColor: '#6366f1',
+    secondaryColor: '#6b7280',
     fontFamily: 'Poppins, sans-serif',
     layoutType: 'modern',
-    animationStyle: 'dynamic',
-    headerFontSize: '52px',
-    questionFontSize: '30px',
+    animationStyle: 'smooth',
+    headerFontSize: '64px',
+    questionFontSize: '32px',
     optionFontSize: '26px',
     captionStyle: 'none'
   },
   {
-    id: 3,
-    name: 'Cool Blue Academic',
-    backgroundType: 'gradient',
-    primaryColor: '#3b82f6',
-    secondaryColor: '#8b5cf6',
-    fontFamily: 'Inter, sans-serif',
-    layoutType: 'classic',
+    id: 2,
+    name: 'Clean Light Modern',
+    backgroundType: 'solid',
+    primaryColor: '#e5e7eb',
+    secondaryColor: '#1f2937',
+    fontFamily: 'Poppins, sans-serif',
+    layoutType: 'modern',
     animationStyle: 'smooth',
-    headerFontSize: '46px',
-    questionFontSize: '28px',
+    headerFontSize: '56px',
+    questionFontSize: '30px',
     optionFontSize: '24px',
     captionStyle: 'none'
   },
   {
+    id: 3,
+    name: 'Ocean Blue Dynamic',
+    backgroundType: 'gradient',
+    primaryColor: '#0ea5e9',
+    secondaryColor: '#6366f1',
+    fontFamily: 'Poppins, sans-serif',
+    layoutType: 'modern',
+    animationStyle: 'dynamic',
+    headerFontSize: '60px',
+    questionFontSize: '32px',
+    optionFontSize: '26px',
+    captionStyle: 'none'
+  },
+  {
     id: 4,
-    name: 'Clean Minimal',
-    backgroundType: 'solid',
-    primaryColor: '#f3f4f6',
-    secondaryColor: '#1f2937',
-    fontFamily: 'Inter, sans-serif',
-    layoutType: 'minimal',
-    animationStyle: 'subtle',
-    headerFontSize: '44px',
-    questionFontSize: '26px',
-    optionFontSize: '22px',
+    name: 'Warm Gradient Vibrant',
+    backgroundType: 'gradient',
+    primaryColor: '#f59e0b',
+    secondaryColor: '#10b981',
+    fontFamily: 'Poppins, sans-serif',
+    layoutType: 'modern',
+    animationStyle: 'dynamic',
+    headerFontSize: '58px',
+    questionFontSize: '30px',
+    optionFontSize: '25px',
     captionStyle: 'none'
   }
 ];
@@ -81,7 +81,7 @@ export function generateTemplateCSS(template: VideoTemplate): string {
     background = template.primaryColor;
   }
 
-  const textColor = template.backgroundType === 'solid' && template.primaryColor.includes('f3f4f6')
+  const textColor = template.backgroundType === 'solid' && template.primaryColor.includes('e5e7eb')
     ? template.secondaryColor
     : '#ffffff';
 
@@ -100,7 +100,7 @@ export function generateTemplateCSS(template: VideoTemplate): string {
 
     .header {
       position: absolute;
-      top: 40px;
+      top: 60px;
       left: 0;
       right: 0;
       text-align: center;
@@ -109,15 +109,23 @@ export function generateTemplateCSS(template: VideoTemplate): string {
 
     .header-title {
       font-size: ${template.headerFontSize};
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-weight: 800;
+      letter-spacing: 3px;
       margin: 0;
-      ${template.backgroundType === 'solid' ? `color: ${template.primaryColor === '#f3f4f6' ? '#0d9488' : textColor};` : ''}
+      text-transform: uppercase;
+      ${template.backgroundType === 'solid' ? `
+        color: #ffffff;
+        background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+        padding: 18px 60px;
+        border-radius: 60px;
+        display: inline-block;
+        box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+      ` : ''}
     }
 
     .content-container {
       position: absolute;
-      top: 200px;
+      top: 220px;
       left: 60px;
       right: 60px;
       bottom: 200px;
@@ -130,62 +138,65 @@ export function generateTemplateCSS(template: VideoTemplate): string {
 
     .question-container {
       width: 100%;
-      max-width: 900px;
+      max-width: 920px;
       margin-bottom: 60px;
     }
 
     .question-type {
-      font-size: 24px;
-      font-weight: 600;
+      font-size: 28px;
+      font-weight: 700;
       color: ${template.backgroundType === 'solid' ? '#f59e0b' : '#fbbf24'};
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 30px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
       text-align: center;
     }
 
     .question-text {
       font-size: ${template.questionFontSize};
-      font-weight: 500;
-      line-height: 1.6;
+      font-weight: 600;
+      line-height: 1.7;
       text-align: center;
-      margin: 0 0 40px 0;
-      padding: 0 20px;
+      margin: 0 0 50px 0;
+      padding: 0 30px;
+      ${template.backgroundType === 'solid' ? 'color: #1f2937;' : ''}
     }
 
     .options-container {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
 
     .option {
-      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.15)'};
-      border: 3px solid ${template.backgroundType === 'solid' ? '#d1d5db' : 'rgba(255, 255, 255, 0.3)'};
-      border-radius: 20px;
-      padding: 24px 30px;
+      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.2)'};
+      border: 3px solid ${template.backgroundType === 'solid' ? '#e5e7eb' : 'rgba(255, 255, 255, 0.35)'};
+      border-radius: 25px;
+      padding: 28px 35px;
       font-size: ${template.optionFontSize};
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 25px;
       transition: all 0.3s ease;
+      box-shadow: ${template.backgroundType === 'solid' ? '0 4px 15px rgba(0,0,0,0.08)' : '0 4px 15px rgba(0,0,0,0.15)'};
       ${template.backgroundType === 'solid' ? `color: ${template.secondaryColor};` : ''}
     }
 
     .option-letter {
-      background: ${template.backgroundType === 'solid' ? template.secondaryColor : 'rgba(255, 255, 255, 0.25)'};
-      color: ${template.backgroundType === 'solid' ? '#ffffff' : textColor};
-      width: 50px;
-      height: 50px;
+      background: ${template.backgroundType === 'solid' ? template.secondaryColor : 'rgba(0, 0, 0, 0.4)'};
+      color: #ffffff;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
-      font-size: 28px;
+      font-weight: 800;
+      font-size: 32px;
       flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
     .option-text {
@@ -201,103 +212,111 @@ export function generateTemplateCSS(template: VideoTemplate): string {
     }
 
     .timer-box {
-      background: rgba(255, 255, 255, 0.2);
-      border: 4px solid ${template.backgroundType === 'solid' ? '#f59e0b' : '#fbbf24'};
-      border-radius: 30px;
-      padding: 30px 60px;
+      background: ${template.backgroundType === 'solid' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.25)'};
+      border: 5px solid ${template.backgroundType === 'solid' ? '#f59e0b' : '#fbbf24'};
+      border-radius: 40px;
+      padding: 40px 80px;
       margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     }
 
     .timer-number {
-      font-size: 120px;
-      font-weight: 800;
+      font-size: 140px;
+      font-weight: 900;
       line-height: 1;
       margin: 0;
       ${template.backgroundType === 'solid' ? `color: ${template.secondaryColor};` : ''}
     }
 
     .timer-label {
-      font-size: 32px;
-      font-weight: 600;
-      margin-top: 10px;
+      font-size: 36px;
+      font-weight: 700;
+      margin-top: 12px;
     }
 
     .answer-container {
       width: 100%;
-      max-width: 900px;
+      max-width: 920px;
       margin-top: 40px;
     }
 
     .answer-box {
-      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.15)'};
-      border: 4px solid ${template.backgroundType === 'solid' ? '#10b981' : '#34d399'};
-      border-radius: 20px;
-      padding: 30px 40px;
-      margin-bottom: 30px;
+      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.2)'};
+      border: 5px solid ${template.backgroundType === 'solid' ? '#10b981' : '#34d399'};
+      border-radius: 25px;
+      padding: 35px 50px;
+      margin-bottom: 35px;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
     }
 
     .answer-title {
-      font-size: 32px;
-      font-weight: 700;
+      font-size: 36px;
+      font-weight: 800;
       color: ${template.backgroundType === 'solid' ? '#10b981' : '#34d399'};
-      margin: 0 0 15px 0;
+      margin: 0 0 20px 0;
       text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .answer-text {
-      font-size: 28px;
-      font-weight: 600;
+      font-size: 32px;
+      font-weight: 700;
       margin: 0;
       text-align: center;
       ${template.backgroundType === 'solid' ? `color: ${template.secondaryColor};` : ''}
     }
 
     .solution-box {
-      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.15)'};
-      border: 3px solid ${template.backgroundType === 'solid' ? '#d1d5db' : 'rgba(255, 255, 255, 0.3)'};
-      border-radius: 20px;
-      padding: 30px 40px;
+      background: ${template.backgroundType === 'solid' ? '#ffffff' : 'rgba(255, 255, 255, 0.18)'};
+      border: 4px solid ${template.backgroundType === 'solid' ? '#e5e7eb' : 'rgba(255, 255, 255, 0.35)'};
+      border-radius: 25px;
+      padding: 35px 50px;
+      box-shadow: ${template.backgroundType === 'solid' ? '0 4px 15px rgba(0,0,0,0.08)' : '0 4px 15px rgba(0,0,0,0.15)'};
     }
 
     .solution-title {
-      font-size: 28px;
-      font-weight: 700;
-      margin: 0 0 20px 0;
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0 0 25px 0;
       text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .solution-text {
-      font-size: 22px;
-      line-height: 1.6;
+      font-size: 24px;
+      line-height: 1.7;
       margin: 0;
+      font-weight: 500;
       ${template.backgroundType === 'solid' ? `color: ${template.secondaryColor};` : ''}
     }
 
     .decoration-icon {
       position: absolute;
-      opacity: 0.1;
-      font-size: 120px;
+      opacity: 0.08;
+      font-size: 140px;
     }
 
     .icon-top-left {
-      top: 150px;
-      left: 40px;
+      top: 180px;
+      left: 50px;
     }
 
     .icon-top-right {
-      top: 150px;
-      right: 40px;
+      top: 180px;
+      right: 50px;
     }
 
     .icon-bottom-right {
-      bottom: 100px;
-      right: 40px;
+      bottom: 120px;
+      right: 50px;
     }
 
     @keyframes fadeIn {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(30px);
       }
       to {
         opacity: 1;
@@ -308,11 +327,22 @@ export function generateTemplateCSS(template: VideoTemplate): string {
     @keyframes slideIn {
       from {
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-40px);
       }
       to {
         opacity: 1;
         transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
       }
     }
 
@@ -321,20 +351,24 @@ export function generateTemplateCSS(template: VideoTemplate): string {
         transform: scale(1);
       }
       50% {
-        transform: scale(1.05);
+        transform: scale(1.08);
       }
     }
 
     .animate-fade-in {
-      animation: fadeIn ${template.animationStyle === 'dynamic' ? '0.4s' : '0.6s'} ease-out;
+      animation: fadeIn ${template.animationStyle === 'dynamic' ? '0.5s' : '0.7s'} ease-out;
     }
 
     .animate-slide-in {
-      animation: slideIn ${template.animationStyle === 'dynamic' ? '0.3s' : '0.5s'} ease-out;
+      animation: slideIn ${template.animationStyle === 'dynamic' ? '0.4s' : '0.6s'} ease-out;
+    }
+
+    .animate-scale-in {
+      animation: scaleIn ${template.animationStyle === 'dynamic' ? '0.5s' : '0.7s'} ease-out;
     }
 
     .animate-pulse {
-      animation: pulse ${template.animationStyle === 'subtle' ? '2s' : '1.5s'} ease-in-out infinite;
+      animation: pulse ${template.animationStyle === 'subtle' ? '2.5s' : '2s'} ease-in-out infinite;
     }
   `;
 }

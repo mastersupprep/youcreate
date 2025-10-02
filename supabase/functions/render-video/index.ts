@@ -59,12 +59,15 @@ Deno.serve(async (req: Request) => {
         solution: question.solution
       },
       instructions: {
-        background: `Template ${template_id}`,
-        audio: 'Overlay voice-over',
-        captions: 'Word-by-word highlighting',
-        countdown: '5-second question display',
-        answer_reveal: 'Green checkmark animation',
-        export: 'MP4 1080p 30fps'
+        background: `Template ${template_id} - Modern engaging design`,
+        audio: 'Overlay voice-over with full audio',
+        captions: 'NO word-by-word highlighting - display complete content',
+        question_display: 'Show FULL question statement at once, not in parts',
+        options_display: 'Show ALL options together on screen',
+        countdown: '5-second countdown timer with question visible',
+        answer_reveal: 'Display answer and solution on screen without audio explanation',
+        transitions: 'Smooth fade and scale transitions between scenes',
+        export: 'MP4 1080x1920 30fps vertical format'
       }
     };
 

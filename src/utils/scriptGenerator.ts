@@ -12,53 +12,53 @@ interface ScriptTemplate {
 const SCRIPT_TEMPLATES: ScriptTemplate[] = [
   {
     id: 1,
-    name: 'Engaging Teacher Style',
-    introPattern: 'Hey everyone! Today we are solving a question from {exam_name} for {course_name}.',
-    questionPattern: 'So the question says: {question_statement}. {options_text}',
-    timerPattern: 'I want you to try this yourself. Take 5 seconds. Ready? 5... 4... 3... 2... 1...',
-    answerRevealPattern: 'Okay, time is up! The answer and solution are on your screen.',
+    name: 'Engaging Style',
+    introPattern: 'Hello everyone, today we are going to solve a question for {exam_name} {course_name}.',
+    questionPattern: 'So the question says: {question_statement}. And the options are: {options_text}',
+    timerPattern: 'Try solving this question on your own. I will give you 5 seconds. 5... 4... 3... 2... 1...',
+    answerRevealPattern: 'Okay time is up! The answer and solution is on your screen.',
     solutionPattern: '',
-    outroPattern: 'If you want a complete roadmap for {exam_name} {course_name}, follow and comment "roadmap" and it will be in your DMs.'
+    outroPattern: 'If you want complete roadmap for {exam_name} {course_name}, follow and comment roadmap and it will be in your DMs. Thank you bacho!'
   },
   {
     id: 2,
-    name: 'Direct and Clear Style',
-    introPattern: 'Hello! Quick question for {exam_name} {course_name} today.',
-    questionPattern: 'The question is: {question_statement}. {options_text}',
-    timerPattern: 'Try it yourself! You have 5 seconds. 5... 4... 3... 2... 1... Done!',
-    answerRevealPattern: 'Time up! Here is the answer on your screen.',
+    name: 'Quick Style',
+    introPattern: 'Hey everyone! Solving a {exam_name} {course_name} question today.',
+    questionPattern: 'The question is: {question_statement}. Options are: {options_text}',
+    timerPattern: 'Try it yourself! Giving you 5 seconds. 5... 4... 3... 2... 1...',
+    answerRevealPattern: 'Times up! Answer and solution on your screen.',
     solutionPattern: '',
-    outroPattern: 'For complete {exam_name} {course_name} preparation guide, follow and comment "guide". Check your DMs!'
+    outroPattern: 'Want complete roadmap for {exam_name} {course_name}? Follow and comment roadmap. Thank you!'
   },
   {
     id: 3,
-    name: 'Motivational Style',
-    introPattern: 'What is up! Ready for a {exam_name} {course_name} challenge today?',
-    questionPattern: 'Here is the question: {question_statement}. {options_text}',
-    timerPattern: 'Think you can solve it? Let me see! 5 seconds starting now... 5... 4... 3... 2... 1... Let us check!',
-    answerRevealPattern: 'And the answer is revealed on your screen!',
+    name: 'Energetic Style',
+    introPattern: 'What is up everyone! Today we are solving a {exam_name} {course_name} question.',
+    questionPattern: 'So the question says: {question_statement}. And the options for this are: {options_text}',
+    timerPattern: 'I would love if you try this yourself! Giving you 5 seconds. 5... 4... 3... 2... 1...',
+    answerRevealPattern: 'Time up! The answer and solution are on your screen.',
     solutionPattern: '',
-    outroPattern: 'Want to master {exam_name} {course_name}? Follow me and drop "roadmap" for the complete preparation guide in your DMs!'
+    outroPattern: 'For complete roadmap of {exam_name} {course_name}, follow and comment roadmap and roadmap will be in your DMs. Thank you bacho!'
   },
   {
     id: 4,
-    name: 'Professional Academic Style',
-    introPattern: 'Welcome. Today we will solve a question from {exam_name} for {course_name}.',
-    questionPattern: 'The question states: {question_statement}. {options_text}',
-    timerPattern: 'Attempt this problem independently. 5 seconds. 5... 4... 3... 2... 1... Proceed.',
-    answerRevealPattern: 'The correct answer is now displayed on screen.',
+    name: 'Friendly Style',
+    introPattern: 'Hello friends! Today we have a {exam_name} {course_name} question.',
+    questionPattern: 'The question says: {question_statement}. The options are: {options_text}',
+    timerPattern: 'Try this by yourself! I am giving you 5 seconds. 5... 4... 3... 2... 1...',
+    answerRevealPattern: 'Okay times up! Answer and solution is on your screen.',
     solutionPattern: '',
-    outroPattern: 'For comprehensive {exam_name} {course_name} preparation resources, follow and comment "roadmap".'
+    outroPattern: 'If you want complete roadmap for {exam_name} {course_name}, follow and comment roadmap. It will be in your DMs!'
   },
   {
     id: 5,
-    name: 'Friendly Tutor Style',
-    introPattern: 'Hey there! Got an interesting {exam_name} {course_name} question for you today.',
-    questionPattern: 'Let us read it: {question_statement}. {options_text}',
-    timerPattern: 'Give it a shot! I will wait 5 seconds. 5... 4... 3... 2... 1... Okay!',
-    answerRevealPattern: 'Here is the answer on your screen!',
+    name: 'Motivational Style',
+    introPattern: 'Namaste everyone! Lets solve a {exam_name} {course_name} question today.',
+    questionPattern: 'So the question is: {question_statement}. And the options for this question are: {options_text}',
+    timerPattern: 'Now you try! Take 5 seconds to solve. 5... 4... 3... 2... 1...',
+    answerRevealPattern: 'Time is up! Check the answer and solution on screen.',
     solutionPattern: '',
-    outroPattern: 'Need more practice with {exam_name} {course_name}? Hit follow and comment "roadmap" for the complete guide!'
+    outroPattern: 'For complete roadmap for your {exam_name} {course_name} preparation, follow and comment roadmap. Thank you bacho!'
   }
 ];
 
