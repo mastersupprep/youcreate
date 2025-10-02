@@ -679,7 +679,7 @@ export default function VideoCreationPanel({ courseId, question }: VideoCreation
                 <FileText className="w-5 h-5" />
                 <div className="text-left">
                   <div className="font-medium">1. Generate Script</div>
-                  <div className="text-sm opacity-80">Using Gemini AI</div>
+                  <div className="text-sm opacity-80">Clean audio-only script</div>
                 </div>
               </div>
               {loading === 'script' ? (
